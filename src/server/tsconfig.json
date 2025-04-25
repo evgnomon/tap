@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../../dist/server",
+    "noEmit": false,
+    "jsx": "react-jsx" // Enable JSX for server-side rendering
+  },
+  "include": ["./**/*", "./*.ts"] // Include App.tsx explicitly
+}
