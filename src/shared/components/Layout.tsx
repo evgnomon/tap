@@ -1,20 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import Footer from "@shared/components/Footer";
+import Header from "@shared/components/Header";
+import Content from "@shared/components/Content";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/about">About</Link>
-          </li>
-        </ul>
-      </nav>
-      <main>{children}</main>
+    <div className="min-h-screen flex flex-col font-sans">
+      <Header />
+      <Content>{children}</Content>
+      <Footer />
     </div>
   );
 };

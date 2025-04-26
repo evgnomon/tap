@@ -18,7 +18,7 @@ export const render = ({ url }: RenderProps): string => {
     <!DOCTYPE html>
     <html>
       <head>
-        <title>SSR App</title>
+        <title>Zygote .Run</title>
         <link rel="stylesheet" href="/styles/global.css">
       </head>
       <body>
