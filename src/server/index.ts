@@ -1,6 +1,7 @@
 import express from "express";
-import pageRoutes from "./routes/pageRoutes.js";
-import apiRoutes from "./routes/apiRoutes.js";
+import pageRoutes from "./routes/pageRoutes";
+import apiRoutes from "./routes/apiRoutes";
+import "@shared/i18n";
 
 const app = express();
 

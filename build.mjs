@@ -16,8 +16,12 @@ const sharedOptions = {
     ".ts": "ts",
     ".tsx": "tsx",
     ".css": "css",
+    ".ttf": "file",
+    ".woff": "file",
+    ".woff2": "file",
+    ".ico": "file",
   },
-  resolveExtensions: [".tsx", ".ts", ".js"],
+  resolveExtensions: [".tsx", ".ts", ".js", ".json"],
   define: {
     "process.env.NODE_ENV": JSON.stringify(
       process.env.NODE_ENV || "development",
@@ -34,6 +38,7 @@ build({
   platform: "browser",
   tsconfig: "./src/client/tsconfig.json", // Path to your tsconfig.json
   plugins: [postcss()],
+  assetNames: "assets/[name]-[hash]",
 }).catch(() => process.exit(1));
 
 // Server build configuration

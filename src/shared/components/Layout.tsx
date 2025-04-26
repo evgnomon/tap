@@ -6,7 +6,7 @@ import Content from "@shared/components/Content";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
-    <div className="min-h-screen flex flex-col font-sans">
+    <div className="min-h-screen flex flex-col font-inter text-primary">
       <Header />
       <Content>{children}</Content>
       <Footer />

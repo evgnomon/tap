@@ -1,3 +1,6 @@
+@import url("@client/assets/fonts/vazir/Vazirmatn-font-face.css");
+@import url("inter-ui/inter.css");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
