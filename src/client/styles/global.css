@@ -1,6 +1,32 @@
-@import url("@client/assets/fonts/vazir/Vazirmatn-font-face.css");
+@import url("vazirmatn/misc/UI-Farsi-Digits-Non-Latin/Vazirmatn-UI-FD-NL-font-face.css");
 @import url("inter-ui/inter.css");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  .number {
+    direction: ltr;
+    unicode-bidi: embed;
+  }
+}
+
+[data-theme="sepia"] {
+  @apply filter;
+  filter: sepia(80%) hue-rotate(10deg) saturate(120%);
+}
+
+.z-logo {
+  /* Set the image path */
+  background-image: url("@client/assets/icons/logo.svg");
+
+  /* Optional: Control size and positioning */
+  background-size: cover; /* Scales image to cover the element */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+
+  /* Ensure the element has dimensions */
+  width: 2rem;
+  height: 2rem;
+}

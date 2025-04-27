@@ -1,7 +1,7 @@
 import { hydrateRoot } from "react-dom/client";
 import App from "@shared/App";
 import { BrowserRouter } from "react-router-dom";
-import "@shared/i18n";
+import { parseCookies } from "@shared/utils/cookies";
 
 if (document != undefined) {
   const root = document.getElementById("root");
@@ -9,7 +9,7 @@ if (document != undefined) {
     hydrateRoot(
       root,
       <BrowserRouter>
-        <App />
+        <App initialCookies={parseCookies(undefined)} />
       </BrowserRouter>,
     );
   }

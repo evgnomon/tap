@@ -1,6 +1,4 @@
 node_modules/
 dist/ 
 .env
-public/index.js*
-public/styles
-public/assets/
+/public

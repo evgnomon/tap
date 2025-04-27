@@ -1,6 +1,9 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { getPageLink } from "@shared/pages/Linker";
+import { useTheme } from "@shared/context/ThemeContext";
+import Timestamp from "./Timestamp";
+import clsx from "clsx";
 
 const footerPageLinks = ["home", "privacy"];
 
@@ -32,12 +35,28 @@ function FooterItem({ page }: LabelProps) {
 
 function FooterCopyRight() {
   const { t } = useTranslation();
-  return <p>© 2025 {t("fullBrandName")}</p>;
+  return (
+    <p>
+      {t("copyright")}
+      <span className="number">
+        <Timestamp date={new Date(2022, 1)} format="YYYY" />
+        -
+        <Timestamp date={new Date()} format="YYYY" />
+      </span>
+      {t("fullBrandName")}
+    </p>
+  );
 }
 
 function Footer() {
+  const { classes } = useTheme();
   return (
-    <footer className="bg-primary flex flex-row justify-between items-center ps-4 pe-4">
+    <footer
+      className={clsx(
+        "flex flex-row justify-between items-center ps-4 pe-4",
+        classes.cardBg,
+      )}
+    >
       <FooterCopyRight />
       <FooterItems>
         {footerPageLinks.map((page) => (

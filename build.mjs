@@ -20,6 +20,7 @@ const sharedOptions = {
     ".woff": "file",
     ".woff2": "file",
     ".ico": "file",
+    ".svg": "file",
   },
   resolveExtensions: [".tsx", ".ts", ".js", ".json"],
   define: {

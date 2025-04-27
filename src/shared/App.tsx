@@ -7,11 +7,12 @@ import { ThemeProvider } from "@shared/context/ThemeContext";
 interface AppProps {
   isServer?: boolean;
   url?: string;
+  initialCookies: Record<string, string>;
 }
 
-const App: React.FC<AppProps> = () => {
+const App: React.FC<AppProps> = ({ initialCookies }) => {
   return (
-    <ThemeProvider>
+    <ThemeProvider initialCookies={initialCookies}>
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />

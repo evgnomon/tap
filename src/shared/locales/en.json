@@ -2,5 +2,8 @@
   "brandName": "Zygote",
   "fullBrandName": "Zygote .Run",
   "homePageTitle": "Home",
-  "privacyPageTitle": "Privacy"
+  "privacyPageTitle": "Privacy",
+  "searchPlaceholder": "Search",
+  "copyright": "©",
+  "z": "z"
 }
