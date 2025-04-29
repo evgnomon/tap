@@ -3,6 +3,7 @@ import LanguageToggle from "@shared/components/LanguageToggle";
 import { useTranslation } from "react-i18next";
 import clsx from "clsx";
 import { useTheme } from "@shared/context/ThemeContext";
+import CalendarToggle from "./CalendarToggle";
 
 function Header() {
   const { t } = useTranslation();
@@ -22,6 +23,7 @@ function Header() {
 
       <ThemeToggle />
       <LanguageToggle />
+      <CalendarToggle />
       <search>
         <form>
           <input

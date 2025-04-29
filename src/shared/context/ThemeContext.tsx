@@ -3,6 +3,17 @@ import * as React from "react";
 import { parseCookies } from "@shared/utils/cookies";
 
 const rtlLanguages = ["ar", "he", "fa"];
+interface Calendar {
+  name: string;
+  title: {
+    [key in string]: string;
+  };
+}
+
+export const calendars: Calendar[] = [
+  { name: "persian", title: { en: "Farsi", fa: "فارسی" } },
+  { name: "gregorian", title: { en: "Gregorian", fa: "میلادی" } },
+];
 
 export interface Theme {
   name: Record<string, string>;
@@ -70,6 +81,7 @@ interface ThemeContextType {
   classes: Theme;
   toggleTheme: (name: string) => void;
   setLanguage: (lang: string, isRTL?: boolean) => void;
+  setCalendar: (calendar: string) => void;
 }
 
 // Create Context with default value
@@ -117,7 +129,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
       typeof window !== "undefined"
         ? parseCookies(document.cookie)
         : initialCookies;
-    return cookies.calendar || "georgian";
+    return cookies.calendar || "gregorian";
   };
 
   const getInitialIsRTL = (): boolean => {
@@ -138,6 +150,10 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     setCookie("theme", theme);
     document.documentElement.setAttribute("data-theme", theme);
   }, [theme]);
+
+  React.useEffect(() => {
+    setCookie("calendar", calendar);
+  }, [calendar]);
 
   React.useEffect(() => {
     setCookie("language", language);
@@ -163,8 +179,17 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
 
   // Memoize context value to prevent unnecessary re-renders
   const contextValue = React.useMemo(
-    () => ({ theme, language, isRTL, toggleTheme, setLanguage, classes }),
-    [theme, language, isRTL],
+    () => ({
+      theme,
+      language,
+      isRTL,
+      classes,
+      calendar,
+      setCalendar,
+      toggleTheme,
+      setLanguage,
+    }),
+    [theme, language, isRTL, calendar],
   );
 
   return (
