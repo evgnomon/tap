@@ -16,8 +16,8 @@ interface DateDisplayProps {
 const DateDisplay: React.FC<DateDisplayProps> = ({ date, format }) => {
   const { calendar, language } = useTheme();
 
-  var c: Calendar = gregorian;
-  var l: Locale = gregorian_en;
+  let c: Calendar = gregorian;
+  let l: Locale = gregorian_en;
 
   if (calendar === "persian") {
     c = persian;

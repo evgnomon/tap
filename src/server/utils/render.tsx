@@ -4,7 +4,6 @@ import App from "@shared/App";
 
 interface RenderProps {
   url: string;
-  context: Record<string, any>;
   initialCookies: Record<string, string>;
 }
 

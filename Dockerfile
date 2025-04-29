@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Build the application
-RUN npm run build
+RUN npm run lint && npm run build
 
 # Expose port 3000 (default for Express)
 EXPOSE 3000
