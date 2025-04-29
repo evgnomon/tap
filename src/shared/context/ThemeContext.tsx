@@ -33,39 +33,39 @@ export const themes: Themes = {
     name: {
       en: "Dark",
     },
-    bg: "dark:bg-dark-bg-primary",
+    bg: "dark:bg-dark-bg-primary dark:text-dark-text-primary",
     text: "dark:text-dark-text-primary",
-    cardBg: "dark:bg-dark-bg-tertiary",
+    cardBg: "dark:bg-dark-bg-secondary dark:text-dark-text-secondary",
     accent: "dark:bg-dark-accent-primary dark:hover:bg-dark-accent-primary/80",
-    box: "ps-1 pe-1 dark:bg-dark-bg-primary dark:text-dark-text-secondary dark:text-black dark:border dark:border-gray-700",
+    box: "ps-1 pe-1 dark:bg-dark-bg-primary dark:border dark:border-dark-300 dark:text-dark-text-secondary focus:outline-none",
   },
   sepia: {
     name: {
       en: "Sepia",
     },
-    bg: "sepia:bg-sepia-bg-primary",
+    bg: "sepia:bg-sepia-bg-primary sepia:text-sepia-text-primary",
     text: "sepia:text-sepia-text-primary",
-    cardBg: "sepia:bg-sepia-bg-tertiary",
+    cardBg: "sepia:bg-sepia-bg-secondary sepia:text-sepia-text-secondary",
     accent:
       "sepia:bg-sepia-accent-primary sepia:hover:bg-sepia-accent-primary/80",
-    box: "sepia:border sepia:border-sepia-300 sepia:rounded-md sepia:px-4 sepia:py-2 sepia:text-sepia-700 sepia:focus:outline-none sepia:focus:ring-2 sepia:focus:ring-sepia-500",
+    box: "ps-1 pe-1 sepia:bg-sepia-bg-primary sepia:border sepia:border-sepia-300 sepia:text-sepia-text-secondary sepia:focus:outline-none",
   },
   retro: {
     name: {
       en: "Retro",
     },
-    bg: "retro:bg-retro-bg-primary",
+    bg: "retro:bg-retro-bg-primary retro:text-retro-text-primary",
     text: "retro:text-retro-text-primary",
-    cardBg: "retro:bg-retro-bg-tertiary",
+    cardBg: "retro:bg-retro-bg-secondary retro:text-retro-text-secondary",
     accent:
       "retro:bg-retro-accent-primary retro:hover:bg-retro-accent-primary/80",
-    box: "retro:border retro:border-retro-300 retro:rounded-md retro:px-4 retro:py-2 retro:text-retro-700 retro:focus:outline-none retro:focus:ring-2 retro:focus:ring-retro-500",
+    box: "ps-1 pe-1 retro:bg-retro-bg-primary retro:border retro:border-retro-300 retro:text-retro-text-secondary retro:focus:outline-none",
   },
 };
-
 interface ThemeContextType {
   theme: string;
   language: string;
+  calendar: string;
   isRTL: boolean;
   classes: Theme;
   toggleTheme: (name: string) => void;
@@ -112,6 +112,14 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     return cookies.language || "en";
   };
 
+  const getInitialCalendar = (): string => {
+    const cookies =
+      typeof window !== "undefined"
+        ? parseCookies(document.cookie)
+        : initialCookies;
+    return cookies.calendar || "georgian";
+  };
+
   const getInitialIsRTL = (): boolean => {
     const cookies =
       typeof window !== "undefined"
@@ -123,6 +131,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   const [language, setLanguageState] =
     React.useState<string>(getInitialLanguage);
   const [isRTL, setIsRTL] = React.useState<boolean>(getInitialIsRTL);
+  const [calendar, setCalendar] = React.useState<string>(getInitialCalendar);
 
   // Update cookies on state changes (client-side only)
   React.useEffect(() => {
