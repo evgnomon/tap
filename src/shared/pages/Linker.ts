@@ -7,7 +7,7 @@ interface PageLink {
 const pages: { [key: string]: PageLink } = {
   home: {
     title: "homePageTitle",
-    link: "/pages/home",
+    link: "/",
   },
   privacy: {
     title: "privacyPageTitle",
