@@ -5,6 +5,7 @@ import Header from "@shared/components/Header";
 import Content from "@shared/components/Content";
 import clsx from "clsx";
 import { useTheme } from "@shared/context/ThemeContext";
+import BurgerMenu from "./BurgerMenu";
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isRTL } = useTheme();
@@ -21,6 +22,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       )}
     >
       <Header />
+      <BurgerMenu />
       <Content>{children}</Content>
       <Footer />
     </div>
