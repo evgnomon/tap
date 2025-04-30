@@ -23,9 +23,20 @@ export const LI: React.FC<DocumentProps> = ({ children }) => (
   <li className="mb-3 text-base">{children}</li>
 );
 
-export const Strong: React.FC<DocumentProps> = ({ children }) => (
-  <strong className="font-semibold text-gray-900">{children}</strong>
-);
+export const Strong: React.FC<DocumentProps> = ({ children }) => {
+  const { theme } = useTheme();
+  return (
+    <strong
+      className={clsx([
+        "font-semibold",
+        theme === "light" && "text-gray-900",
+        theme === "dark" && "dark:text-gray-100",
+      ])}
+    >
+      {children}
+    </strong>
+  );
+};
 
 export const H1: React.FC<DocumentProps> = ({ children }) => {
   const { theme } = useTheme();
