@@ -11,7 +11,7 @@ interface Calendar {
 }
 
 export const calendars: Calendar[] = [
-  { name: "persian", title: { en: "Farsi", fa: "فارسی" } },
+  { name: "persian", title: { en: "Jalali", fa: "جلالی" } },
   { name: "gregorian", title: { en: "Gregorian", fa: "میلادی" } },
 ];
 
