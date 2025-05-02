@@ -5,3 +5,24 @@
     - evgnomon.catamaran
   roles:
     - role: z_container
+
+- name: Add front
+  hosts: localhost
+  collections:
+    - evgnomon.catamaran
+  tasks:
+    - name: Add front
+      add_host:
+        name: "{{ item }}"
+        groups: front
+        ansible_user: "root"
+      with_items:
+        - front-a-1.zygote.run
+        - front-b-1.zygote.run
+
+- name: Deploy pod
+  hosts: front
+  collections:
+    - evgnomon.catamaran
+  roles:
+    - role: z_pod
