@@ -26,3 +26,5 @@
     - evgnomon.catamaran
   roles:
     - role: z_pod
+      vars:
+        public_port: 3000
