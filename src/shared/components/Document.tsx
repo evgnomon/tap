@@ -1,6 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 import { useTheme } from "@shared/context/ThemeContext";
+import { Link } from "react-router-dom";
 
 interface DocumentProps {
   children: React.ReactNode;
@@ -69,12 +70,12 @@ export const H2: React.FC<DocumentProps> = ({ children }) => {
 };
 
 export const A: React.FC<LinkProps> = ({ href, children }) => (
-  <a
-    href={href}
+  <Link
+    to={href}
     className="text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200"
   >
     {children}
-  </a>
+  </Link>
 );
 
 export const Section: React.FC<DocumentProps> = ({ children }) => (

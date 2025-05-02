@@ -11,6 +11,7 @@ interface MenuItem {
 const menuItems: MenuItem[] = [
   { label: "Home", path: "/" },
   { label: "About", path: "/about" },
+  { label: "Resources", path: "/resources" },
 ];
 
 const BurgerMenu: React.FC = () => {
