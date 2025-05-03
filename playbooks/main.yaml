@@ -5,11 +5,10 @@
     - evgnomon.catamaran
   roles:
     - role: z_container
+    - role: z_sshadd
 
 - name: Add front
   hosts: localhost
-  collections:
-    - evgnomon.catamaran
   tasks:
     - name: Add front
       add_host:
