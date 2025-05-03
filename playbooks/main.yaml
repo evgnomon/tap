@@ -15,6 +15,7 @@
         name: "{{ item }}"
         groups: front
         ansible_user: "root"
+        ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
       with_items:
         - front-a-1.zygote.run
         - front-b-1.zygote.run
