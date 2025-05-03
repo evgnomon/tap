@@ -5,30 +5,33 @@
   collections:
     - evgnomon.catamaran
   roles:
-    - role: z_container
-    - role: z_sshadd
+    # - role: z_container
+    # - role: z_sshadd
   tasks:
+    - set_fact:
+        secrets: "{{ lookup('file', lookup('env', 'INPUT_VAULT_FILE')) | from_yaml }}"
+      no_log: false
     - debug:
         msg: "Hello {{ secrets.tester }}"
 
-- name: Add front
-  hosts: localhost
-  tasks:
-    - name: Add front
-      add_host:
-        name: "{{ item }}"
-        groups: front
-        ansible_user: "root"
-        ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
-      with_items:
-        - front-a-1.zygote.run
-        - front-b-1.zygote.run
+# - name: Add front
+#   hosts: localhost
+#   tasks:
+#     - name: Add front
+#       add_host:
+#         name: "{{ item }}"
+#         groups: front
+#         ansible_user: "root"
+#         ansible_ssh_common_args: "-o StrictHostKeyChecking=no"
+#       with_items:
+#         - front-a-1.zygote.run
+#         - front-b-1.zygote.run
 
-- name: Deploy pod
-  hosts: front
-  collections:
-    - evgnomon.catamaran
-  roles:
-    - role: z_pod
-      vars:
-        public_port: 3000
+# - name: Deploy pod
+#   hosts: front
+#   collections:
+#     - evgnomon.catamaran
+#   roles:
+#     - role: z_pod
+#       vars:
+#         public_port: 3000

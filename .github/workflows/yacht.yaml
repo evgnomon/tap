@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - '*'
-    tags:
-      - "*"
   delete:
     branches:
       - '*'
@@ -20,9 +18,6 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/evgnomon/barge:main
-    permissions:
-      contents: read
-      packages: write
     steps:
     - uses: actions/checkout@v4
     - name: Run Playbook
@@ -31,4 +26,4 @@ jobs:
         vault: ${{ secrets.VAULT_FILE }}
         vault_pass: ${{ secrets.VAULT_PASS }}
         container_network: ${{ job.container.network }}
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        # github_token: ${{ secrets.GITHUB_TOKEN }}
