@@ -1,6 +1,7 @@
 ---
 - name: Build container image
   hosts: localhost
+  gather_facts: false
   collections:
     - evgnomon.catamaran
   roles:
