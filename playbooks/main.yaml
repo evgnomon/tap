@@ -1,11 +1,15 @@
 ---
 - name: Build container image
   hosts: localhost
+  gather_facts: false
   collections:
     - evgnomon.catamaran
   roles:
     - role: z_container
     - role: z_sshadd
+  tasks:
+    - debug:
+        msg: "Hello {{ secrets.tester }}"
 
 - name: Add front
   hosts: localhost
