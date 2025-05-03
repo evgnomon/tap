@@ -9,6 +9,7 @@ interface DocumentProps {
 
 interface LinkProps extends DocumentProps {
   href: string;
+  external?: boolean;
 }
 
 // Custom components with Tailwind CSS
@@ -69,14 +70,23 @@ export const H2: React.FC<DocumentProps> = ({ children }) => {
   );
 };
 
-export const A: React.FC<LinkProps> = ({ href, children }) => (
-  <Link
-    to={href}
-    className="text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200"
-  >
-    {children}
-  </Link>
-);
+export const A: React.FC<LinkProps> = ({ href, external, children }) => {
+  return external ? (
+    <a
+      href={href}
+      className="text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200"
+    >
+      {children}
+    </a>
+  ) : (
+    <Link
+      to={href}
+      className="text-blue-600 hover:text-blue-800 hover:underline transition-colors duration-200"
+    >
+      {children}
+    </Link>
+  );
+};
 
 export const Section: React.FC<DocumentProps> = ({ children }) => (
   <section className="mb-8">{children}</section>

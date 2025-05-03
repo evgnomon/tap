@@ -1,6 +1,7 @@
 interface PageLink {
   title: string;
   link: string;
+  external?: boolean;
 }
 
 // Using object literal with explicit type
@@ -19,7 +20,13 @@ const pages: { [key: string]: PageLink } = {
   },
   docs: {
     title: "docsPageTitle",
-    link: "/pages/docs",
+    link: "/docs/",
+    external: true,
+  },
+  blog: {
+    title: "blogPageTitle",
+    link: "/docs/blog",
+    external: true,
   },
 };
 

@@ -1,11 +1,11 @@
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
 import { getPageLink } from "@shared/pages/Linker";
 import { useTheme } from "@shared/context/ThemeContext";
 import Timestamp from "./Timestamp";
 import clsx from "clsx";
+import {A} from "./Document";
 
-const footerPageLinks = ["home", "privacy"];
+const footerPageLinks = ["home", "privacy", "blog", "docs"];
 
 interface FooterItemsProps {
   children: React.ReactNode;
@@ -28,7 +28,7 @@ function FooterItem({ page }: LabelProps) {
   const p = getPageLink(page);
   return (
     <li className="p-2">
-      <Link to={p.link}>{t(p.title)}</Link>
+      <A href={p.link} external={p.external}>{t(p.title)}</A>
     </li>
   );
 }
