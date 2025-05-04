@@ -19,7 +19,7 @@ export const render = ({ url, initialCookies }: RenderProps): string => {
       <head>
         <title>Zygote .Run</title>
         <link rel="stylesheet" href="/styles/global.css">
-        <link rel="icon" type="image/x-icon" href="@client/assets/icons/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="/favicon.ico">
       </head>
       <body>
         <div id="root">${content}</div>
