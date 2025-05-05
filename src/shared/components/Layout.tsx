@@ -10,7 +10,6 @@ import BurgerMenu from "./BurgerMenu";
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { isRTL } = useTheme();
   const { classes } = useTheme();
-  console.log("Layout classes", classes);
   return (
     <div
       className={clsx(

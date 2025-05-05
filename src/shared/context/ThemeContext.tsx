@@ -78,10 +78,12 @@ interface ThemeContextType {
   language: string;
   calendar: string;
   isRTL: boolean;
+  timezone: string;
   classes: Theme;
   toggleTheme: (name: string) => void;
   setLanguage: (lang: string, isRTL?: boolean) => void;
   setCalendar: (calendar: string) => void;
+  setTimeZone: (calendar: string) => void;
 }
 
 // Create Context with default value
@@ -107,36 +109,28 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
   children,
   initialCookies = {},
 }) => {
+  const cookies =
+    typeof window !== "undefined"
+      ? parseCookies(document.cookie)
+      : initialCookies;
   // Initialize state from cookies
   const getInitialTheme = (): string => {
-    const cookies =
-      typeof window !== "undefined"
-        ? parseCookies(document.cookie)
-        : initialCookies;
     return cookies.theme || "light";
   };
 
   const getInitialLanguage = (): string => {
-    const cookies =
-      typeof window !== "undefined"
-        ? parseCookies(document.cookie)
-        : initialCookies;
     return cookies.language || "en";
   };
 
   const getInitialCalendar = (): string => {
-    const cookies =
-      typeof window !== "undefined"
-        ? parseCookies(document.cookie)
-        : initialCookies;
     return cookies.calendar || "gregorian";
   };
 
+  const getInitialTimeZone = (): string => {
+    return cookies.timezone || "Europe/Zurich";
+  };
+
   const getInitialIsRTL = (): boolean => {
-    const cookies =
-      typeof window !== "undefined"
-        ? parseCookies(document.cookie)
-        : initialCookies;
     return cookies.isRTL === "true";
   };
   const [theme, setTheme] = React.useState<string>(getInitialTheme);
@@ -144,6 +138,7 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     React.useState<string>(getInitialLanguage);
   const [isRTL, setIsRTL] = React.useState<boolean>(getInitialIsRTL);
   const [calendar, setCalendar] = React.useState<string>(getInitialCalendar);
+  const [timezone, setTimeZone] = React.useState<string>(getInitialTimeZone);
 
   // Update cookies on state changes (client-side only)
   React.useEffect(() => {
@@ -162,6 +157,10 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
     document.documentElement.setAttribute("lang", language);
     i18n.changeLanguage(language);
   }, [language, isRTL]);
+
+  React.useEffect(() => {
+    setCookie("timezone", timezone);
+  }, [timezone]);
 
   const toggleTheme = (name: string) => {
     setTheme(name);
@@ -188,8 +187,10 @@ export const ThemeProvider: React.FC<ThemeProviderProps> = ({
       setCalendar,
       toggleTheme,
       setLanguage,
+      timezone,
+      setTimeZone,
     }),
-    [theme, language, isRTL, calendar],
+    [theme, language, isRTL, calendar, timezone],
   );
 
   return (

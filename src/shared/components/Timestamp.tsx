@@ -1,6 +1,7 @@
 import { useTheme } from "@shared/context/ThemeContext";
 import React from "react";
 import DateObject, { Calendar, Locale } from "react-date-object";
+import { DateTime } from "luxon";
 
 import persian from "react-date-object/calendars/persian";
 import gregorian from "react-date-object/calendars/gregorian";
@@ -14,7 +15,7 @@ interface DateDisplayProps {
 }
 
 const DateDisplay: React.FC<DateDisplayProps> = ({ date, format }) => {
-  const { calendar, language } = useTheme();
+  const { calendar, language, timezone } = useTheme();
 
   let c: Calendar = gregorian;
   let l: Locale = gregorian_en;
@@ -22,8 +23,6 @@ const DateDisplay: React.FC<DateDisplayProps> = ({ date, format }) => {
   if (calendar === "persian") {
     c = persian;
   }
-
-  console.log(calendar, language);
 
   if (language === "fa" && calendar === "persian") {
     l = persian_fa;
@@ -34,12 +33,15 @@ const DateDisplay: React.FC<DateDisplayProps> = ({ date, format }) => {
   } else if (language === "en" && calendar === "gregorian") {
     l = gregorian_en;
   }
-
-  console.log({ date: date, calendar: c, locale: l });
-
-  const dateObj = new DateObject({ date: date, calendar: c, locale: l });
+  const utcDate = DateTime.fromJSDate(date).setZone("UTC");
+  const luxonDate = utcDate.setZone(timezone, { keepLocalTime: true });
+  const convertedDate = luxonDate.toJSDate();
+  const dateObj = new DateObject({
+    date: convertedDate,
+    calendar: c,
+    locale: l,
+  });
   const formattedDate = dateObj.format(format);
-
   return <span className="ps-1 pe-1">{formattedDate}</span>;
 };
 

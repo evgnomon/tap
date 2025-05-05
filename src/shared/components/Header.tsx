@@ -4,11 +4,11 @@ import { useTranslation } from "react-i18next";
 import clsx from "clsx";
 import { useTheme } from "@shared/context/ThemeContext";
 import CalendarToggle from "./CalendarToggle";
+import TimeZoneToggle from "./TimeZoneToggle";
 
 function Header() {
   const { t } = useTranslation();
   const { classes } = useTheme();
-  console.log("Layout classes", classes);
   return (
     <header
       className={clsx([
@@ -24,6 +24,7 @@ function Header() {
       <ThemeToggle />
       <LanguageToggle />
       <CalendarToggle />
+      <TimeZoneToggle />
       <search>
         <form>
           <input
