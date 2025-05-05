@@ -20,22 +20,22 @@ const BurgerMenu: React.FC = () => {
     <Menu
       right={isRTL}
       customCrossIcon={false}
-      className="bg-gray-800"
+      className="bg-gray-100"
       burgerButtonClassName={clsx([
-        "fixed top-3 w-4 h-3",
+        "fixed top-5 w-6 h-5",
         isRTL && "right-3",
         !isRTL && "left-3",
       ])}
-      burgerBarClassName="bg-gray-700"
-      crossButtonClassName="w-3 h-3"
-      crossClassName="bg-gray-400"
-      overlayClassName="bg-black bg-opacity-30"
-      itemListClassName="text-gray-300 p-3"
+      burgerBarClassName="bg-gray-900"
+      crossButtonClassName="w-4 h-4"
+      crossClassName="bg-gray-300"
+      overlayClassName="bg-black bg-opacity-10"
+      itemListClassName="text-gray-900 p-3"
     >
       {menuItems.map((item) => (
         <a
           key={item.path}
-          className="block text-gray-200 text-lg no-underline mb-2 hover:text-white transition-colors duration-200"
+          className="block text-gray-900 text-lg no-underline mb-2 hover:text-gray-300 transition-colors duration-200"
           href={item.path}
         >
           {item.label}

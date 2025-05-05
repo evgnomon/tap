@@ -12,7 +12,7 @@ function Header() {
   return (
     <header
       className={clsx([
-        "p-1 ps-8 px-4 text-center sticky top-0 z-10 flex flex-direction-row items-center justify-between",
+        "h-[60px] p-[8px] ps-10 px-4 text-center sticky top-0 z-10 flex flex-direction-row items-center justify-between",
         classes.cardBg,
       ])}
     >
