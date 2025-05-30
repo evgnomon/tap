@@ -6,27 +6,28 @@ const Home: React.FC = () => {
       <div className="h-20"></div>
       <h1 className="text-5xl font-bold text-center p-3">
         {" "}
-        HGL/Zygote: A Free Boilerplateless web cooperating system kernel for a
-        digital civilization
+        A Free Boilerplateless web cooperating system
       </h1>
       <h1 className="text-4xl text-center p-3">
         {" "}
-        Build your own web platform and your web applications/functions layered
-        over/under HTTPs IO using your own programming language!
+        Build your next function in a programming language that you are best at.
+        Don&apos;t waste a second! Just push, Everything else is free under HGL.
       </h1>
       <h2 className="text-2xl text-center text-gray-500 p-3">
         {" "}
-        We give you a free complete meal when we need it most and receive no
-        meal unless a free complete one when you need it most! You are just a
+        We give you a free complete meal when you need it most and receive no
+        meal unless a free complete one, when we need it most! You are just a
         single push away from a running function/building-block that scales for
         the latest user like the first and scales for the first user like the
-        last. The infrastructure, tables, cache, replication, sharding, and
-        nodes are handled by Zygote for Z and by Z for Zygote. There is no
-        information stored in Zygote unless replicated and sharded! Therefore,
+        last. The infrastructure nodes, SQL tables, in memory clustered cache with replication, sharding, and
+        nodes are handled by Zygote. There is no
+        information stored in Zygote unless replicated and sharded!
+        As the app developer you just use Https interfaces and provide Https interfaces.
+        Therefore,
         as a developer you just take and make the next important building block
         without wasting a second! Make an initial push for your function in
         Zygote .Run, immediately get it up running. You pay a small fee in
-        Bitcoin unless you want to take self-custody. You (are) welcome to fork
+        Bitcoin separate to resources you use. unless you want to take self-custody. You (are) welcome to fork
         Zygote .Run together with your functions and data, so run and maintain
         the same code at your own custody.
       </h2>
