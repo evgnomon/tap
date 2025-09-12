@@ -1,40 +1,80 @@
 import React from "react";
 
 const Home: React.FC = () => {
+  const features = [
+    {
+      title: "Serverless Platform",
+      description: "A free and open source serverless platform for your web applications. Deploy functions without managing infrastructure.",
+      icon: "🚀"
+    },
+    {
+      title: "Multi-Language Support",
+      description: "Build your next function in any programming language you're comfortable with. No restrictions, maximum flexibility.",
+      icon: "💻"
+    },
+    {
+      title: "Instant Deployment",
+      description: "Just push your code and everything else is handled automatically. No configuration headaches or deployment complexity.",
+      icon: "⚡"
+    },
+    {
+      title: "Auto-Scaling",
+      description: "Functions scale automatically for any number of users - from the first user to millions, with consistent performance.",
+      icon: "📈"
+    },
+    {
+      title: "Managed Infrastructure",
+      description: "In memory storage with replication, sharding. Infrastructure nodes are all managed by Zygote automatically.",
+      icon: "🏗️"
+    },
+    {
+      title: "HTTPS Interfaces",
+      description: "Simple HTTPS-based architecture. You consume and provide HTTPS interfaces - that's all you need to worry about.",
+      icon: "🔗"
+    },
+    {
+      title: "Data Reliability",
+      description: "No data is stored unless properly replicated and sharded. Your data is safe and always available when you need it.",
+      icon: "🛡️"
+    },
+    {
+      title: "Self-Custody Option",
+      description: "Fork Zygote.Run with your functions and data to run and maintain everything under your own custody if desired.",
+      icon: "🔐"
+    }
+  ];
+
   return (
-    <div className="rounded-full px-2 py-1.5 text-sm/6">
+    <div className="px-4 py-8">
       <div className="h-20"></div>
-      <h1 className="text-5xl font-bold text-center p-3">
-        {" "}
-        A Free Boilerplateless web cooperating system
-      </h1>
-      <h1 className="text-4xl text-center p-3">
-        {" "}
-        Build your next function in a programming language that you are best at.
-        Don&apos;t waste a second! Just push, Everything else is free under HGL.
-      </h1>
-      <h2 className="text-2xl text-center text-gray-500 p-3">
-        {" "}
-        We give you a free complete meal when you need it most and receive no
-        meal unless a free complete one, when we need it most! You are just a
-        single push away from a running function/building-block that scales for
-        the latest user like the first and scales for the first user like the
-        last. The infrastructure nodes, SQL tables, in memory clustered cache with replication, sharding, and
-        nodes are handled by Zygote. There is no
-        information stored in Zygote unless replicated and sharded!
-        As the app developer you just use Https interfaces and provide Https interfaces.
-        Therefore,
-        as a developer you just take and make the next important building block
-        without wasting a second! Make an initial push for your function in
-        Zygote .Run, immediately get it up running. You pay a small fee in
-        Bitcoin separate to resources you use. unless you want to take self-custody. You (are) welcome to fork
-        Zygote .Run together with your functions and data, so run and maintain
-        the same code at your own custody.
-      </h2>
-      <div className="flex justify-center items-center">
-        <button className="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
+      <div className="text-center mb-12">
+        <h1 className="text-5xl font-bold mb-6">
+          Build on top of a cloud platform that you own
+        </h1>
+        <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto">
+          A free and open source serverless platform that lets you build and deploy functions 
+          without worrying about infrastructure and the furture. Just focus on your code!
+        </p>
+        <button className="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
           Build the spaceship while flying
         </button>
+      </div>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        {features.map((feature, index) => (
+          <div 
+            key={index} 
+            className="bg-white rounded-lg shadow-sm border border-gray-200 p-6 hover:shadow-md transition-shadow duration-300"
+          >
+            <div className="text-4xl mb-4">{feature.icon}</div>
+            <h3 className="text-lg font-semibold mb-3 text-gray-800">
+              {feature.title}
+            </h3>
+            <p className="text-gray-600 text-sm leading-relaxed">
+              {feature.description}
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );
