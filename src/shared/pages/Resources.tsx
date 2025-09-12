@@ -9,7 +9,6 @@ const Resources = () => {
         <ul>
           <li>
             <A href="/resources/memory">Memory</A>
-            <A href="/resources/tables">Tables</A>
           </li>
         </ul>
       </div>
