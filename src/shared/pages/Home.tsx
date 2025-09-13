@@ -49,14 +49,14 @@ const Home: React.FC = () => {
       <div className="h-20"></div>
       <div className="text-center mb-12">
         <h1 className="text-5xl font-bold mb-6">
-          Build on top of a cloud platform that you own
+          Zygote .Run edge serverless runtime
         </h1>
         <p className="text-xl text-gray-600 mb-8 max-w-4xl mx-auto">
           A free and open source serverless platform that lets you build and deploy functions 
-          without worrying about infrastructure and the furture. Just focus on your code!
+          without worrying about infrastructure and vendor lock-in. Just focus on delivering your next feature!
         </p>
         <button className="bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-700 transition duration-300">
-          Build the spaceship while flying
+          Get Started
         </button>
       </div>
       
