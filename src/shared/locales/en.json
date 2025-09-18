@@ -8,5 +8,44 @@
   "searchPlaceholder": "Search",
   "copyright": "©",
   "IP": "IP",
-  "z": "z"
+  "z": "z",
+  "home": {
+    "title": "Zygote .Run a self-custodied and elastic serverless runtime",
+    "subtitle": "A free and open source serverless platform that lets you build and deploy functions without worrying about infrastructure and vendor lock-in. Just focus on delivering your next feature!",
+    "getStarted": "99 seconds to Hello World",
+    "features": {
+      "serverlessPlatform": {
+        "title": "Serverless Platform",
+        "description": "A free and open source serverless platform for your web applications. Deploy functions without managing infrastructure."
+      },
+      "multiLanguageSupport": {
+        "title": "Multi-Language Support",
+        "description": "Build your next function in any programming language you're comfortable with. No restrictions, maximum flexibility."
+      },
+      "instantDeployment": {
+        "title": "Instant Deployment",
+        "description": "Just push your code and everything else is handled automatically. No configuration headaches or deployment complexity."
+      },
+      "autoScaling": {
+        "title": "Auto-Scaling",
+        "description": "Functions scale automatically for any number of users - from the first user to millions, with consistent performance."
+      },
+      "managedInfrastructure": {
+        "title": "Managed Infrastructure",
+        "description": "In memory storage with replication, sharding. Infrastructure nodes are all managed by Zygote automatically."
+      },
+      "httpsInterfaces": {
+        "title": "HTTPS Interfaces",
+        "description": "Simple HTTPS-based architecture. You consume and provide HTTPS interfaces - that's all you need to worry about."
+      },
+      "dataReliability": {
+        "title": "Data Reliability",
+        "description": "No data is stored unless properly replicated and sharded. Your data is safe and always available when you need it."
+      },
+      "selfCustodyOption": {
+        "title": "Self-Custody Option",
+        "description": "Fork Zygote.Run with your functions and data to run and maintain everything under your own custody if desired."
+      }
+    }
+  }
 }
