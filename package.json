@@ -44,11 +44,7 @@
     "typescript-eslint": "^8.31.1"
   },
   "nodemonConfig": {
-    "watch": [
-      "src",
-      "tailwind.config.js",
-      "postcss.config.js"
-    ],
+    "watch": ["src", "tailwind.config.js", "postcss.config.js"],
     "ext": "js,ts,jsx,tsx,json,css",
     "exec": "npm run build && npm start"
   }
