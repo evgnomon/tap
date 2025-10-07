@@ -15,7 +15,7 @@
     "i18next": "^25.0.1",
     "inter-ui": "^4.1.0",
     "lucide-react": "^0.544.0",
-    "luxon": "^3.6.1",
+    "luxon": "^3.7.2",
     "react": "^18.3.1",
     "react-burger-menu": "^3.1.0",
     "react-date-object": "^2.1.9",
@@ -27,7 +27,7 @@
   "devDependencies": {
     "@eslint/js": "^9.25.1",
     "@types/express": "^4.17.21",
-    "@types/luxon": "^3.6.2",
+    "@types/luxon": "^3.7.1",
     "@types/node": "^20.17.31",
     "@types/react": "^18.3.20",
     "@types/react-burger-menu": "^2.8.7",
