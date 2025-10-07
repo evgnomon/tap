@@ -10,13 +10,13 @@
   "IP": "IP",
   "z": "z",
   "home": {
-    "title": "A cloud platform under HGL for all functions",
-    "subtitle": "There is no productivity without self-custody.",
+    "title": "A cloud platform for all functions",
+    "subtitle": "Self-custody is unrestricted as we distribute free code under HGL.",
     "getStarted": "Deploy Hello World",
     "features": {
       "serverlessPlatform": {
-        "title": "Serverless Platform",
-        "description": "A free and open source serverless platform for your web applications. Deploy functions without managing infrastructure."
+        "title": "Serverless and Serverful",
+        "description": "A free and open source serverless platform for your web applications. Deploy functions without managing infrastructure. You can can also choose to install the platform on your own servers if you want full control."
       },
       "multiLanguageSupport": {
         "title": "Multi-Language Support",
@@ -24,27 +24,27 @@
       },
       "instantDeployment": {
         "title": "Instant Deployment",
-        "description": "Just push your code and everything else is handled automatically. No configuration headaches or deployment complexity."
+        "description": "Just push your code and everything else is handled automatically. We maintain Github Actions for easy CI/CD workflows. Just use our templates to get started."
       },
       "autoScaling": {
         "title": "Auto-Scaling",
-        "description": "Functions scale automatically for any number of users - from the first user to millions, with consistent performance."
+        "description": "Num nodes scale automatically depending to the workload - and failover is automatic too. Focus on your code, not the infrastructure."
       },
       "managedInfrastructure": {
-        "title": "Managed Infrastructure",
-        "description": "In memory storage with replication, sharding. Infrastructure nodes are all managed by Zygote automatically."
+        "title": "Full Stack",
+        "description": "In memory storage with replication and sharding and a distributed SQL database on NVMe is available for your functions to use."
       },
       "httpsInterfaces": {
         "title": "HTTPS Interfaces",
-        "description": "Simple HTTPS-based architecture. You consume and provide HTTPS interfaces - that's all you need to worry about."
+        "description": "All functions are given a certificate automatically. Just deploy and your function is live on the internet with a secure HTTPS endpoint."
       },
       "dataReliability": {
         "title": "Data Reliability",
-        "description": "No data is stored unless properly replicated and sharded. Your data is safe and always available when you need it."
+        "description": "No data is stored unless sharded and replicated three times. Device failover is automatic. Sharding allows you to increase limits as simple as adding more nodes."
       },
       "selfCustodyOption": {
         "title": "Self-Custody Option",
-        "description": "Fork Zygote.Run with your functions and data to run and maintain everything under your own custody if desired."
+        "description": "Zygote .Run is free and open source under the HGL. You can install it on your own servers if you want full control. We also offer a managed service if you want to avoid the hassle of managing your own servers."
       }
     }
   }
