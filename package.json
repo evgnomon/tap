@@ -13,7 +13,7 @@
     "esbuild-postcss": "^0.0.4",
     "express": "^4.21.2",
     "i18next": "^25.0.1",
-    "inter-ui": "^4.1.0",
+    "inter-ui": "^4.1.1",
     "lucide-react": "^0.544.0",
     "luxon": "^3.6.1",
     "react": "^18.3.1",
