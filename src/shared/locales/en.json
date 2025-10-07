@@ -10,9 +10,9 @@
   "IP": "IP",
   "z": "z",
   "home": {
-    "title": "Zygote .Run a self-custodied and elastic serverless runtime",
-    "subtitle": "A free and open source serverless platform that lets you build and deploy functions without worrying about infrastructure and vendor lock-in. Just focus on delivering your next feature!",
-    "getStarted": "99 seconds to Hello World",
+    "title": "A cloud platform under HGL for all functions",
+    "subtitle": "There is no productivity without self-custody.",
+    "getStarted": "Deploy Hello World",
     "features": {
       "serverlessPlatform": {
         "title": "Serverless Platform",
